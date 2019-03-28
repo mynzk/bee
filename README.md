@@ -6,13 +6,6 @@
   A components library for <a href="https://facebook.github.io/react">React</a>
 </p>
 
-<p align="center">
-  <a href="https://www.npmjs.com/package/shineout"><img src="https://img.shields.io/npm/v/shineout.svg?style=flat-square"></a>
-  <a href="https://www.npmjs.com/package/shineout"><img src="https://img.shields.io/npm/dm/shineout.svg?style=flat-square"></a>
-  <a href="https://david-dm.org/sheinsight/shineout"><img src="https://img.shields.io/david/sheinsight/shineout.svg?style=flat-square"></a>
-  <img src="https://img.shields.io/badge/React-%3E%3D16.0.0-green.svg?style=flat-square">
-</p>
-
 ## Docs
 
 [View docs here](https://sheinsight.github.io/shineout/)
@@ -20,7 +13,7 @@
 ## Requirements
 
 ```
-React >= 16.0.0
+React >= 16.8.0
 ```
 
 ## Browsers support
@@ -32,9 +25,9 @@ React >= 16.0.0
 ## Installation
 
 ```
-yarn add shineout
+yarn add bee
 // or
-npm install shineout
+npm install bee
 ```
 
 ## CDN
@@ -47,7 +40,7 @@ npm install shineout
 ## Usage
 
 ```
-import { Button } from 'shineout'
+import { Modal } from 'bee'
 
-<Button />
+<Modal />
 ```
