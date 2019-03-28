@@ -1,0 +1,15 @@
+{
+    "extends": [
+      "eslint-config-alloy/react",
+      "eslint-config-prettier",
+      "eslint-config-prettier/react"
+    ],
+    "plugins": [
+      "react-hooks"
+    ],
+    "rules": {
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn"
+    }
+  }
+  

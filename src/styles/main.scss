@@ -1,0 +1,15 @@
+.add-fade {
+  background: #fff;
+  animation: fade-top 0.3s;
+}
+
+@keyframes fade-top {
+  0% {
+    top: -400px;
+    opacity: 0.1;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
