@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import '@styles/reset.scss'
 import Modal from '@components/Modal'
+import Counter from '@components/Counter'
 import _styles from '@styles/main.scss'
 
 const customStyles = {
@@ -60,17 +61,30 @@ class App extends PureComponent {
 
     render() {
         return (
-            <React.Fragment>
-                <button onClick={this.handleOpenModal}>click</button>
-                <Modal
-                    visible={this.state.visible}
-                    requestClose={this.handleCloseModal}
-                    style={customStyles}
-                    className={_styles['add-fade']}
-                >
-                    <button onClick={this.handleCloseModal}>close</button>
-                </Modal>
-            </React.Fragment>
+            <div className={_styles.container}>
+                <div className={_styles.header}></div>
+                <div className={_styles.content}>
+                    <aside>
+                        <button onClick={this.handleOpenModal}>click</button>
+                    </aside>
+                    <section>
+                        <Modal
+                            visible={this.state.visible}
+                            requestClose={this.handleCloseModal}
+                            style={customStyles}
+                            className={_styles['add-fade']}
+                        >
+                            <button onClick={this.handleCloseModal}>close</button>
+                            <Counter />
+                        </Modal>
+                    </section>
+                </div>
+                <div className={_styles.footer}>
+                    <div className={_styles.left}></div>
+                    <div className={_styles.center}></div>
+                    <div className={_styles.right}></div>
+                </div>
+            </div>
         )
     }
 }
