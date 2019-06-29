@@ -13,3 +13,53 @@
     opacity: 1;
   }
 }
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  //flex: 0 0 100px;
+  height: 100px;
+  background: #cecece;
+}
+
+.content {
+  flex: 1;
+  background: yellow;
+  display: flex;
+}
+
+aside {
+  background: pink;
+  flex: 0 1 25%;
+}
+section {
+  flex: 1;
+}
+
+.footer {
+  //flex-basis: 70px;
+  height: 70px;
+  background: red;
+  display: flex;
+}
+
+.center {
+  height: 70px;
+  background-color: #50bf3c;
+  flex: 1 1 auto;
+}
+.left {
+  flex-basis: 200px;
+  height: 70px;
+  background-color: #ff5722;
+}
+.right {
+  flex-basis: 150px;
+  height: 70px;
+  background-color: #2196f3;
+}
