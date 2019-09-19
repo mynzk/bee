@@ -18,10 +18,10 @@ function Counter() {
     // }
 
     useEffect(() => {
-        countRef.current = count
-        var times = countRef.current
+        // countRef.current = count
+        // var times = countRef.current
         setTimeout(() => {
-            console.log(`You clicked ${times} times`);
+            console.log(`You clicked ${count} times`);
           }, 3000);
     })
 
