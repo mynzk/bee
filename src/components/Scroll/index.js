@@ -147,12 +147,6 @@ class Scroll extends PureComponent {
     }
 }
 
-Scroll.propTypes = {
-    hasSetStyle: PropTypes.object,
-    onSetPre: PropTypes.func.isRequired,
-    onSetNext: PropTypes.func.isRequired,
-}
-
 Scroll.defaultProps = {
     hasSetStyle: {},
 }
