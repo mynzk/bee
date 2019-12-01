@@ -21,11 +21,19 @@
   flex-direction: row;
 }
 
+.wrapper {
+  width: calc(100vw - 80px);
+  height: calc(100vh - 50px);
+  margin: 0 auto;
+  background-color: #2196f3;
+}
+
 .container {
   width: 100vw;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
+  //display: flex;
+  //flex-direction: column;
+  position: relative;
 }
 
 .header {
