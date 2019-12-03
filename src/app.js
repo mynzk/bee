@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import '@styles/reset.scss'
 import Modal from '@components/Modal'
 import Counter from '@components/Counter'
+import { connect } from 'react-redux'
 import Scroll from '@components/Scroll/scroll'
 import _styles from '@styles/main.scss'
 
@@ -45,22 +46,32 @@ class App extends PureComponent {
     }
 
     componentDidMount() {
-        this.setState({ val: this.state.val + 1 })
-        console.log(this.state.val)
+        async function async1() {
+            console.log('async1 start')
+            await async2()
+            console.log('async1 end')
+        }
 
-        this.setState({ val: this.state.val + 1 })
-        console.log(this.state.val)
+        async function async2() {
+            console.log('async2')
+        }
 
-        setTimeout(_ => {
-            console.log(this.state.val,'1');
-            this.setState({ val: this.state.val + 1 })
-            console.log(this.state.val);
+        console.log('script start')
+
+        setTimeout(function() {
+            console.log('setTimeout')
         }, 0)
-        setTimeout(_ => {
-            console.log(this.state.val,'2');
-            this.setState({ val: this.state.val + 1 })
-            console.log(this.state.val);
-        }, 0)
+
+        async1()
+
+        new Promise(function(resolve) {
+            console.log('promise1')
+            resolve()
+        }).then(function() {
+            console.log('promise2')
+        })
+
+        console.log('script end')
     }
 
     handleCloseModal() {
@@ -120,4 +131,8 @@ class App extends PureComponent {
     }
 }
 
-export default App
+const mapState = (state) => {
+    return state
+}
+
+export default connect(mapState)(App)
