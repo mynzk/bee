@@ -4,6 +4,9 @@ import Modal from '@components/Modal'
 import Counter from '@components/Counter'
 import { connect } from 'react-redux'
 import Scroll from '@components/Scroll/scroll'
+import MySvg from '@components/Svg'
+import { mergeSort, quickSort1, quickSort, shellSort } from '@components/Tool'
+import { mySort, mySort1, mySort2 } from '@components/Tool/test'
 import _styles from '@styles/main.scss'
 
 const customStyles = {
@@ -43,36 +46,21 @@ class App extends PureComponent {
         }
         this.handleOpenModal = this.handleOpenModal.bind(this)
         this.handleCloseModal = this.handleCloseModal.bind(this)
+        this.test = this.test.bind(this);
     }
 
     componentDidMount() {
-        async function async1() {
-            console.log('async1 start')
-            await async2()
-            console.log('async1 end')
-        }
-
-        async function async2() {
-            console.log('async2')
-        }
-
-        console.log('script start')
-
-        setTimeout(function() {
-            console.log('setTimeout')
-        }, 0)
-
-        async1()
-
-        new Promise(function(resolve) {
-            console.log('promise1')
-            resolve()
-        }).then(function() {
-            console.log('promise2')
-        })
-
-        console.log('script end')
+        const arr = [3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48];
+        console.time('归并排序耗时');
+        console.log('arr :', arr, mySort2(arr));
+        console.timeEnd('归并排序耗时');
+        var path = document.querySelector('path');
+        var length = path.getTotalLength();
+        console.log(length, 'getTotalLength')
+        this.setState({ visible: true })
     }
+
+    
 
     handleCloseModal() {
         this.setState({
@@ -84,6 +72,25 @@ class App extends PureComponent {
         this.setState({
             visible: true,
         })
+    }
+
+    test() {
+        const arr1 = [3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48];
+        const arr2 = [3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48];
+        const arr3 = [3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48];
+        const arr4 = [3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48];
+        console.time('归并排序耗时');
+        console.log('arr :', arr1, mergeSort(arr1));
+        console.timeEnd('归并排序耗时');
+        console.time('快速排序耗时231');
+        console.log('arr :', arr2, quickSort1(arr2));
+        console.timeEnd('快速排序耗时231');
+        console.time('快速排序耗时');
+        console.log('arr :', arr3, quickSort(arr3));
+        console.timeEnd('快速排序耗时');
+        console.time('希尔排序耗时');
+        console.log('arr :', arr4, shellSort(arr4));
+        console.timeEnd('希尔排序耗时');
     }
 
 
@@ -118,11 +125,11 @@ class App extends PureComponent {
                 */}
                 <div className={_styles.container}>
                     <Scroll
-                        onSetPre={() => { console.log('onSetPre')}}
+                        onSetPre={this.test}
                         onSetNext={() => { console.log('onSetNext')}}
                     >
                         <div className={_styles.wrapper}>
-
+                          {MySvg}
                         </div>
                     </Scroll>
                 </div>
