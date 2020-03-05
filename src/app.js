@@ -3,7 +3,7 @@ import '@styles/reset.scss'
 import Modal from '@components/Modal'
 import Counter from '@components/Counter'
 import { connect } from 'react-redux'
-import Scroll from '@components/Scroll/scroll'
+import Scroll from '@components/Scroll/newscroll'
 import MySvg from '@components/Svg'
 import { mergeSort, quickSort1, quickSort, shellSort } from '@components/Tool'
 import { mySort, mySort1, mySort2 } from '@components/Tool/test'
@@ -43,10 +43,12 @@ class App extends PureComponent {
         this.state = {
             visible: false,
             val: 0,
+            list: [{id: 1, name: '1word'},{id: 2, name: '2word'},{id: 3, name: '3word'},{id: 4, name: '4word'}],
         }
         this.handleOpenModal = this.handleOpenModal.bind(this)
         this.handleCloseModal = this.handleCloseModal.bind(this)
         this.test = this.test.bind(this);
+        this.setList = this.setList.bind(this);
     }
 
     componentDidMount() {
@@ -71,6 +73,12 @@ class App extends PureComponent {
     handleOpenModal() {
         this.setState({
             visible: true,
+        })
+    }
+
+    setList(){
+        this.setState({
+            list: [{id: 1, name: '3word'},{id: 2, name: '4word'},{id: 3, name: '5word'},{id: 4, name: '6word'}],
         })
     }
 
@@ -129,7 +137,10 @@ class App extends PureComponent {
                         onSetNext={() => { console.log('onSetNext')}}
                     >
                         <div className={_styles.wrapper}>
-                          {MySvg}
+                          <div onClick={this.setList}>{MySvg}</div>
+                          {this.state.list.map((item) => (
+                              <div key={item.id}>{item.name}</div>
+                          ))}
                         </div>
                     </Scroll>
                 </div>
