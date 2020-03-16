@@ -23,7 +23,6 @@ module.exports = {
                         loader: 'css-loader',
                         options: {
                             modules: true, // 开启了CSS Module功能，避免类名冲突问题
-                            localIdentName: '[name]-[local]',
                         },
                     },
 

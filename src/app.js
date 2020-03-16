@@ -52,6 +52,7 @@ class App extends PureComponent {
     }
 
     componentDidMount() {
+        console.log(Object.prototype.toString.call([]))
         const arr = [3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48];
         console.time('归并排序耗时');
         console.log('arr :', arr, mySort2(arr));
