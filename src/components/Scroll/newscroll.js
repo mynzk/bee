@@ -144,5 +144,3 @@ Scroll.defaultProps = {
 }
 
 export default Scroll
-
-

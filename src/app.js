@@ -5,7 +5,7 @@ import Counter from '@components/Counter'
 import { connect } from 'react-redux'
 import Scroll from '@components/Scroll/newscroll'
 import MySvg from '@components/Svg'
-import { mergeSort, quickSort1, quickSort, shellSort } from '@components/Tool'
+import { mergeSort, quickSort1, quickSort, shellSort, MyPromise } from '@components/Tool'
 import { mySort, mySort1, mySort2 } from '@components/Tool/test'
 import _styles from '@styles/main.scss'
 
@@ -52,7 +52,6 @@ class App extends PureComponent {
     }
 
     componentDidMount() {
-        console.log(Object.prototype.toString.call([]))
         const arr = [3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48];
         console.time('归并排序耗时');
         console.log('arr :', arr, mySort2(arr));
